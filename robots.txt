@@ -1,0 +1,57 @@
+User-agent: *
+Disallow: /
+Disallow: /*
+Allow: /$
+Crawl-delay: 31536000
+Request-rate: 1/31536000
+Visit-time: 0000-0001
+
+User-agent: Googlebot
+Disallow: /
+Disallow: /*
+
+User-agent: Bingbot
+Disallow: /
+Disallow: /*
+
+User-agent: Slurp
+Disallow: /
+Disallow: /*
+
+User-agent: DuckDuckBot
+Disallow: /
+Disallow: /*
+
+User-agent: Baiduspider
+Disallow: /
+Disallow: /*
+
+User-agent: YandexBot
+Disallow: /
+Disallow: /*
+
+User-agent: Amazonbot
+Disallow: /
+Disallow: /*
+
+User-agent: Applebot
+Disallow: /
+Disallow: /*
+
+Disallow: /*.html$
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.png$
+Disallow: /*.jpg$
+Disallow: /*.jpeg$
+Disallow: /*.gif$
+Disallow: /*.txt$
+Disallow: /*.svg$
+Disallow: /*?*
+Disallow: /*&*
+Disallow: /*/
+Disallow: /*
+
+Sitemap: https://www.patbierkortte.com/robots.txt
+
+Host: 127.0.0.1
