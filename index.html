@@ -10,403 +10,368 @@
         <title>Pat - Data Wizard</title>
     
     <style>
-    @keyframes gradientBG {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-
-    body {
-        font-family: 'Roboto', sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-        background-size: 400% 400%;
-        animation: gradientBG 15s ease infinite;
-        position: relative;
-        overflow-x: hidden;
-    }
-    .background-art {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-    }
-    .container {
-        background-color: rgba(255, 255, 255, 0.9);
-        border-radius: 15px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        padding: 2rem;
-        width: 100%;
-        max-width: 600px;
-        margin: 2rem;
-        position: relative;
-        z-index: 1;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .container:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    }
-    .header-image {
-        width: 200px;
-        height: 200px;
-        margin: 0 auto 2rem;
-        display: block;
-        border-radius: 15px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-        color: #333;
-        text-align: center;
-        margin-bottom: 1rem;
-        font-size: 2.5em;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    }
-    h2, h3 {
-        color: #333;
-        text-align: left;
-        margin-bottom: 1rem;
-    }
-    .bio {
-        text-align: center;
-        color: #666;
-        margin-bottom: 2rem;
-        font-size: 1.1rem;
-        line-height: 1.6;
-    }
-    .summary, .contact {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        margin-bottom: 2rem;
-    }
-    .summary-item, .contact-item {
-        display: flex;
-        align-items: center;
-        margin: 0.5rem;
-        color: #333;
-        transition: transform 0.3s ease;
-    }
-    .summary-item:hover, .contact-item:hover {
-        transform: scale(1.05);
-    }
-    .summary-item svg, .contact-item svg {
-        width: 24px;
-        height: 24px;
-        margin-right: 0.5rem;
-    }
-    .skills {
-        margin-bottom: 2rem;
-    }
-    .skill-category {
-        margin-bottom: 1rem;
-    }
-    .skill-subcategory {
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-        color: #444;
-    }
-    .skill-list {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .skill-item {
-        background-color: rgba(224, 224, 224, 0.7);
-        border-radius: 15px;
-        padding: 0.5rem 1rem;
-        margin: 0.25rem;
-        font-size: 0.9rem;
-        transition: all 0.3s ease;
-    }
-    .skill-item:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    }
-    .contact-item a {
-        color: #333;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-    .contact-item a:hover {
-        color: #4CAF50;
-    }
-    .data-focus {
-        font-weight: bold;
-        color: #2196F3;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-    }
-    .pipeline {
-        height: 5px;
-        background: linear-gradient(90deg, #4CAF50, #2196F3, #9C27B0);
-        margin: 20px 0;
-        border-radius: 5px;
-        animation: flow 5s infinite linear;
-    }
-    @keyframes flow {
-        0% { background-position: 0% 50%; }
-        100% { background-position: 100% 50%; }
-    }
-    .copyright {
-        text-align: center;
-        color: #fff;
-        padding: 1rem;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        font-size: 0.8rem;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            position: relative;
+            overflow-x: hidden;
+        }
+        .background-art {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        .header-image {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+            display: block;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        h2, h3 {
+            color: #333;
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+        .bio {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .summary, .contact {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .summary-item, .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem;
+            color: #333;
+            transition: transform 0.3s ease;
+        }
+        .summary-item:hover, .contact-item:hover {
+            transform: scale(1.05);
+        }
+        .summary-item svg, .contact-item svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 0.5rem;
+        }
+        .skills {
+            margin-bottom: 2rem;
+        }
+        .skill-category {
+            margin-bottom: 1rem;
+        }
+        .skill-subcategory {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #444;
+        }
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .skill-item {
+            background-color: rgba(224, 224, 224, 0.7);
+            border-radius: 15px;
+            padding: 0.5rem 1rem;
+            margin: 0.25rem;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .skill-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .contact-item a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-item a:hover {
+            color: #4CAF50;
+        }
+        .data-focus {
+            font-weight: bold;
+            color: #2196F3;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .pipeline {
+            height: 5px;
+            background: linear-gradient(90deg, #4CAF50, #2196F3, #9C27B0);
+            margin: 20px 0;
+            border-radius: 5px;
+            animation: flow 5s infinite linear;
+        }
+        @keyframes flow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .copyright {
+            text-align: center;
+            color: #fff;
+            padding: 1rem;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            font-size: 0.8rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body>
-<svg class="background-art" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#ee7752;stop-opacity:1" />
-            <stop offset="33%" style="stop-color:#e73c7e;stop-opacity:1" />
-            <stop offset="66%" style="stop-color:#23a6d5;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#23d5ab;stop-opacity:1" />
-        </linearGradient>
-    </defs>
-    
-    <rect width="100%" height="100%" fill="url(#grad1)" />
-    
-    <!-- Data Flow Lines -->
-    <g stroke-width="2" stroke-opacity="0.3">
-        <path d="M0,100 Q500,300 1000,100" stroke="#4CAF50" fill="none">
-            <animate attributeName="d" dur="10s" repeatCount="indefinite"
-                values="M0,100 Q500,300 1000,100;
-                        M0,150 Q500,250 1000,150;
-                        M0,100 Q500,300 1000,100" />
-        </path>
-        <path d="M0,300 Q500,500 1000,300" stroke="#2196F3" fill="none">
-            <animate attributeName="d" dur="15s" repeatCount="indefinite"
-                values="M0,300 Q500,500 1000,300;
-                        M0,350 Q500,450 1000,350;
-                        M0,300 Q500,500 1000,300" />
-        </path>
-        <path d="M0,500 Q500,700 1000,500" stroke="#FFC107" fill="none">
-            <animate attributeName="d" dur="20s" repeatCount="indefinite"
-                values="M0,500 Q500,700 1000,500;
-                        M0,550 Q500,650 1000,550;
-                        M0,500 Q500,700 1000,500" />
-        </path>
-    </g>
-    
-    <!-- Abstract Data Structures -->
-    <g fill-opacity="0.1" stroke-width="1">
-        <circle cx="200" cy="200" r="100" fill="#E91E63">
-            <animate attributeName="r" dur="5s" repeatCount="indefinite"
-                values="100;120;100" />
-        </circle>
-        <rect x="700" y="100" width="200" height="200" fill="#3F51B5">
-            <animate attributeName="y" dur="7s" repeatCount="indefinite"
-                values="100;120;100" />
-        </rect>
-        <polygon points="400,600 500,750 600,600" fill="#009688">
-            <animate attributeName="points" dur="6s" repeatCount="indefinite"
-                values="400,600 500,750 600,600;
-                        420,620 500,770 580,620;
-                        400,600 500,750 600,600" />
-        </polygon>
-    </g>
-</svg>
-
-<div class="container">
-    <svg class="header-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <svg class="background-art" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
         <defs>
-            <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#2196F3;stop-opacity:1" />
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ee7752;stop-opacity:1" />
+                <stop offset="33%" style="stop-color:#e73c7e;stop-opacity:1" />
+                <stop offset="66%" style="stop-color:#23a6d5;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#23d5ab;stop-opacity:1" />
             </linearGradient>
         </defs>
         
-        <rect width="200" height="200" fill="url(#headerGrad)" />
+        <rect width="100%" height="100%" fill="url(#grad1)" />
         
-        <!-- Gear symbol for engineering (behind the avatar) -->
-        <path d="M190,100 L185,85 L170,90 L165,80 L180,70 L170,60 L155,70 L145,65 L155,50 L140,45 L130,60 L120,60 L115,45 L100,50 L105,65 L95,70 L80,60 L70,70 L85,80 L80,90 L65,85 L60,100 L75,105 L75,115 L60,120 L65,135 L80,130 L85,140 L70,150 L80,160 L95,150 L105,155 L100,170 L115,175 L120,160 L130,160 L140,175 L155,170 L145,155 L155,150 L170,160 L180,150 L165,140 L170,130 L185,135 L190,120 L175,115 L175,105 Z" fill="#FFF" stroke="#000" stroke-width="2" opacity="0.3">
-            <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 100 100" to="360 100 100" dur="20s" repeatCount="indefinite" />
-        </path>
+        <!-- Data Flow Lines -->
+        <g stroke-width="2" stroke-opacity="0.3">
+            <path d="M0,100 Q500,300 1000,100" stroke="#4CAF50" fill="none">
+                <animate attributeName="d" dur="10s" repeatCount="indefinite"
+                    values="M0,100 Q500,300 1000,100;
+                            M0,150 Q500,250 1000,150;
+                            M0,100 Q500,300 1000,100" />
+            </path>
+            <path d="M0,300 Q500,500 1000,300" stroke="#2196F3" fill="none">
+                <animate attributeName="d" dur="15s" repeatCount="indefinite"
+                    values="M0,300 Q500,500 1000,300;
+                            M0,350 Q500,450 1000,350;
+                            M0,300 Q500,500 1000,300" />
+            </path>
+            <path d="M0,500 Q500,700 1000,500" stroke="#FFC107" fill="none">
+                <animate attributeName="d" dur="20s" repeatCount="indefinite"
+                    values="M0,500 Q500,700 1000,500;
+                            M0,550 Q500,650 1000,550;
+                            M0,500 Q500,700 1000,500" />
+            </path>
+        </g>
         
-        <!-- Lego-style head -->
-        <circle cx="100" cy="70" r="40" fill="#FFD700" />
-        <rect x="60" y="110" width="80" height="20" fill="#FFD700" />
-        
-        <!-- Glasses -->
-        <rect x="70" y="60" width="25" height="15" rx="5" fill="none" stroke="#000" stroke-width="3" />
-        <rect x="105" y="60" width="25" height="15" rx="5" fill="none" stroke="#000" stroke-width="3" />
-        <line x1="95" y1="67" x2="105" y2="67" stroke="#000" stroke-width="3" />
+        <!-- Abstract Data Structures -->
+        <g fill-opacity="0.1" stroke-width="1">
+            <circle cx="200" cy="200" r="100" fill="#E91E63">
+                <animate attributeName="r" dur="5s" repeatCount="indefinite"
+                    values="100;120;100" />
+            </circle>
+            <rect x="700" y="100" width="200" height="200" fill="#3F51B5">
+                <animate attributeName="y" dur="7s" repeatCount="indefinite"
+                    values="100;120;100" />
+            </rect>
+            <polygon points="400,600 500,750 600,600" fill="#009688">
+                <animate attributeName="points" dur="6s" repeatCount="indefinite"
+                    values="400,600 500,750 600,600;
+                            420,620 500,770 580,620;
+                            400,600 500,750 600,600" />
+            </polygon>
+        </g>
     </svg>
-
-    <h1>Pat</h1>
-    <div class="pipeline"></div>
     
-    <div class="contact">
-        <div class="contact-item">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    <div class="container">
+        <svg class="header-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#2196F3;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            
+            <rect width="200" height="200" fill="url(#headerGrad)" />
+            
+            <!-- Gear symbol for engineering (behind the avatar) -->
+            <path d="M190,100 L185,85 L170,90 L165,80 L180,70 L170,60 L155,70 L145,65 L155,50 L140,45 L130,60 L120,60 L115,45 L100,50 L105,65 L95,70 L80,60 L70,70 L85,80 L80,90 L65,85 L60,100 L75,105 L75,115 L60,120 L65,135 L80,130 L85,140 L70,150 L80,160 L95,150 L105,155 L100,170 L115,175 L120,160 L130,160 L140,175 L155,170 L145,155 L155,150 L170,160 L180,150 L165,140 L170,130 L185,135 L190,120 L175,115 L175,105 Z" fill="#FFF" stroke="#000" stroke-width="2" opacity="0.3">
+                <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 100 100" to="360 100 100" dur="20s" repeatCount="indefinite" />
+            </path>
+            
+            <!-- Lego-style head -->
+            <circle cx="100" cy="70" r="40" fill="#FFD700" />
+            <rect x="60" y="110" width="80" height="20" fill="#FFD700" />
+            
+            <!-- Glasses -->
+            <rect x="70" y="60" width="25" height="15" rx="5" fill="none" stroke="#000" stroke-width="3" />
+            <rect x="105" y="60" width="25" height="15" rx="5" fill="none" stroke="#000" stroke-width="3" />
+            <line x1="95" y1="67" x2="105" y2="67" stroke="#000" stroke-width="3" />
+        </svg>
+    
+        <h1>Hello! I'm Pat</h1>
+        <div class="pipeline"></div>
+        
+        <div class="contact">
+            <div class="contact-item">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             <a href="mailto:hello@patbierkortte.com">Email</a>
+            </div>
+            <div class="contact-item">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                <a href="https://www.linkedin.com/in/pbierkortte">LinkedIn</a>
+            </div>
+            <div class="contact-item">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <a href="https://github.com/pbierkortte">GitHub</a>
+            </div>
         </div>
-        <div class="contact-item">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-            <a href="https://www.linkedin.com/in/pbierkortte">LinkedIn</a>
-        </div>
-        <div class="contact-item">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            <a href="https://github.com/pbierkortte">GitHub</a>
+        
+        <p class="bio">Seasoned Data Engineer and Solution Architect with experience in designing and implementing robust data systems. Proven track record in optimizing data pipelines, driving innovation, and solving complex data challenges across various industries. Expertise in cloud platforms, SQL, and modern data stack technologies, combined with a strategic approach to data architecture and a knack for translating technical solutions into business value. Enthusiastic about leveraging Generative AI to enhance data-driven decision making.</p>
+        
+        <div class="skills">
+            <h2>SKILLS</h2>
+            
+            <div class="skill-category">
+                <h3>Data Engineering & Analytics</h3>
+                <div class="skill-list">
+                    <span class="skill-item">SQL</span>
+                    <span class="skill-item">dbt</span>
+                    <span class="skill-item">Apache Airflow</span>
+                    <span class="skill-item">Pandas</span>
+                    <span class="skill-item">Jupyter</span>
+                    <span class="skill-item">Fivetran</span>
+                    <span class="skill-item">RudderStack</span>
+                    <span class="skill-item">Prefect</span>
+                    <span class="skill-item">Tableau</span>
+                    <span class="skill-item">Looker</span>
+                    <span class="skill-item">PowerBI</span>
+                    <span class="skill-item">Sigma</span>
+                    <span class="skill-item">GoodData</span>
+                    <span class="skill-item">Metabase</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Databases & Data Warehouses</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Snowflake Data Platform</span>
+                    <span class="skill-item">Microsoft SQL Server</span>
+                    <span class="skill-item">Oracle</span>
+                    <span class="skill-item">Postgres</span>
+                    <span class="skill-item">MySQL</span>
+                    <span class="skill-item">BigQuery</span>
+                    <span class="skill-item">MongoDB</span>
+                    <span class="skill-item">Amazon DynamoDB</span>
+                    <span class="skill-item">Azure Cosmos DB</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Cloud Platforms & DevOps</h3>
+                <div class="skill-list">
+                    <span class="skill-item">AWS</span>
+                    <span class="skill-item">Azure</span>
+                    <span class="skill-item">GCP</span>
+                    <span class="skill-item">Kubernetes</span>
+                    <span class="skill-item">Terraform</span>
+                    <span class="skill-item">Docker</span>
+                    <span class="skill-item">Git</span>
+                    <span class="skill-item">CI/CD pipelines</span>
+                    <span class="skill-item">Linux</span>
+                    <span class="skill-item">Microservices</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Architecture & Development</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Miro</span>
+                    <span class="skill-item">Sparx Systems Enterprise Architect</span>
+                    <span class="skill-item">API Design (REST, GraphQL)</span>
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">Java</span>
+                    <span class="skill-item">C</span>
+                    <span class="skill-item">C++</span>
+                    <span class="skill-item">C#</span>
+                    <span class="skill-item">R</span>
+                    <span class="skill-item">HTML</span>
+                    <span class="skill-item">CSS</span>
+                    <span class="skill-item">Bash</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>IT Infrastructure</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Active Directory</span>
+                    <span class="skill-item">Group Policy</span>
+                    <span class="skill-item">DNS</span>
+                    <span class="skill-item">Exchange</span>
+                    <span class="skill-item">JIRA Insight</span>
+                </div>
+            </div>
         </div>
     </div>
     
-    <p class="bio">Hello! I'm Pat, a passionate engineer ready to tackle your <span class="data-focus">data challenges</span>. With expertise in engineering, architecture, and <span class="data-focus">SQL</span>, I build reliable systems and lead innovation with a multi-faceted approach.</p>
+    <div class="copyright">
+        © <span id="currentYear"></span> Pat Bierkortte. All rights reserved.
+    </div>
     
-    <div class="summary">
-        <div class="summary-item">
-            <svg viewBox="0 0 24 24" fill="currentColor"><text x="0" y="20" font-size="20">✨</text></svg>
-            AI Pioneer
-        </div>
-        <div class="summary-item">
-            <svg viewBox="0 0 24 24" fill="currentColor"><text x="0" y="20" font-size="20">⚙️</text></svg>
-            Engineer
-        </div>
-        <div class="summary-item">
-            <svg viewBox="0 0 24 24" fill="currentColor"><text x="0" y="20" font-size="20">⬆️</text></svg>
-            Architect
-        </div>
-        <div class="summary-item">
-            <svg viewBox="0 0 24 24" fill="currentColor"><text x="0" y="20" font-size="20">🥷</text></svg>
-            SQL Ninja
-        </div>
-        <div class="summary-item">
-            <svg viewBox="0 0 24 24" fill="currentColor"><text x="0" y="20" font-size="20">📊</text></svg>
-            Data Geek
-        </div>
-        <div class="summary-item">
-            <svg viewBox="0 0 24 24" fill="currentColor"><text x="0" y="20" font-size="20">📣</text></svg>
-            Marketer
-        </div>
-    </div>
-
-    <div class="skills">
-        <h2>SKILLS</h2>
-        
-        <div class="skill-category">
-            <h3>Architecture</h3>
-            <div class="skill-subcategory">UML | Pattern</div>
-            <div class="skill-list">
-                <span class="skill-item">Sparx Systems Enterprise Architect</span>
-                <span class="skill-item">ERwin Data Modeler</span>
-                <span class="skill-item">Miro</span>
-                <span class="skill-item">FaaS</span>
-                <span class="skill-item">PaaS</span>
-                <span class="skill-item">SaaS</span>
-                <span class="skill-item">MVC</span>
-                <span class="skill-item">API Gateway</span>
-                <span class="skill-item">GraphQL</span>
-                <span class="skill-item">REST</span>
-            </div>
-        </div>
-        
-        <div class="skill-category">
-            <h3>Language</h3>
-            <div class="skill-subcategory">Programming | Spoken</div>
-            <div class="skill-list">
-                <span class="skill-item">Python</span>
-                <span class="skill-item">SQL</span>
-                <span class="skill-item">JavaScript</span>
-                <span class="skill-item">Java</span>
-                <span class="skill-item">C</span>
-                <span class="skill-item">C++</span>
-                <span class="skill-item">C#</span>
-                <span class="skill-item">R</span>
-                <span class="skill-item">HTML</span>
-                <span class="skill-item">CSS</span>
-                <span class="skill-item">Bash</span>
-                <span class="skill-item">English (fluent)</span>
-                <span class="skill-item">Bosnian (learning)</span>
-            </div>
-        </div>
-        
-        <div class="skill-category">
-            <h3>Technology</h3>
-            <div class="skill-subcategory">BI | Analytics</div>
-            <div class="skill-list">
-                <span class="skill-item">Tableau</span>
-                <span class="skill-item">Looker</span>
-                <span class="skill-item">PowerBI</span>
-                <span class="skill-item">SSRS</span>
-                <span class="skill-item">Crystal Reports</span>
-                <span class="skill-item">Apache Airflow</span>
-                <span class="skill-item">DBT</span>
-                <span class="skill-item">Pandas</span>
-                <span class="skill-item">Jupyter</span>
-                <span class="skill-item">SSIS</span>
-                <span class="skill-item">Talend</span>
-            </div>
-            <div class="skill-subcategory">NoSQL | RDBMS</div>
-            <div class="skill-list">
-                <span class="skill-item">MongoDB</span>
-                <span class="skill-item">Amazon DynamoDB</span>
-                <span class="skill-item">Azure Cosmos DB</span>
-                <span class="skill-item">Google BigQuery</span>
-                <span class="skill-item">Snowflake DWH</span>
-                <span class="skill-item">Microsoft SQL Server</span>
-                <span class="skill-item">Oracle</span>
-                <span class="skill-item">Postgres</span>
-                <span class="skill-item">MySQL</span>
-            </div>
-            <div class="skill-subcategory">DevOps | Infrastructure</div>
-            <div class="skill-list">
-                <span class="skill-item">Kubernetes</span>
-                <span class="skill-item">Terraform</span>
-                <span class="skill-item">Linux</span>
-                <span class="skill-item">Git</span>
-                <span class="skill-item">Docker</span>
-                <span class="skill-item">AWS</span>
-                <span class="skill-item">Azure</span>
-                <span class="skill-item">GCP</span>
-                <span class="skill-item">Rackspace</span>
-                <span class="skill-item">Windows Server</span>
-                <span class="skill-item">Hyper-V</span>
-                <span class="skill-item">VMware</span>
-                <span class="skill-item">Azure Migrate</span>
-                <span class="skill-item">Azure Site Recovery</span>
-                <span class="skill-item">Active Directory</span>
-                <span class="skill-item">Group Policy</span>
-                <span class="skill-item">DNS</span>
-                <span class="skill-item">Exchange</span>
-                <span class="skill-item">JIRA Insight</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="copyright">
-    © <span id="currentYear"></span> Pat Bierkortte. All rights reserved.
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', (event) => {
-    const skillItems = document.querySelectorAll('.skill-item');
-    skillItems.forEach(item => {
-        item.style.backgroundColor = getRandomColor();
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const skillItems = document.querySelectorAll('.skill-item');
+        skillItems.forEach(item => {
+            item.style.backgroundColor = getRandomColor();
+        });
+    
+        function getRandomColor() {
+            const hue = Math.floor(Math.random() * 360);
+            return `hsla(${hue}, 70%, 80%, 0.7)`;
+        }
+    
+        // Update copyright year
+        const currentYear = new Date().getFullYear();
+        document.getElementById('currentYear').textContent = currentYear;
     });
-
-    function getRandomColor() {
-        const hue = Math.floor(Math.random() * 360);
-        return `hsla(${hue}, 70%, 80%, 0.7)`;
-    }
-
-    // Update copyright year
-    const currentYear = new Date().getFullYear();
-    document.getElementById('currentYear').textContent = currentYear;
-});
-</script>
+    </script>
 </body>
 </html>
