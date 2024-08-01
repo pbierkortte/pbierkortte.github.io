@@ -52,6 +52,6 @@ Disallow: /*&*
 Disallow: /*/
 Disallow: /*
 
-Sitemap: https://www.patbierkortte.com/robots.txt
+Sitemap: https://www.patbierkortte.com/sitemap.xml
 
 Host: 127.0.0.1
