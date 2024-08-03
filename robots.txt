@@ -1,2 +1,3 @@
 User-agent: *
 Disallow: /*.pdf$
+Sitemap: https://www.patbierkortte.com/site-map.xml
