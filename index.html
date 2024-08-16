@@ -1,24 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <meta name="robots" content="nofollow">
     <meta charset="utf-8">
     <meta name=description content="Pat Bierkortte - Data Engineer ✨ Solutions Architect">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
-
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-
     <head>
         <title>Pat Bierkortte - Data Engineer ✨ Solutions Architect</title>
-    
     <style>
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-    
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -27,9 +17,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            background: #000;
             position: relative;
             overflow-x: hidden;
         }
@@ -40,6 +28,40 @@
             width: 100%;
             height: 100%;
             z-index: -1;
+        }
+        .code-background {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            overflow: hidden;
+            perspective: 1000px;
+        }
+        .code-plane {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+            animation: rotatePlane 60s infinite linear;
+        }
+        @keyframes rotatePlane {
+            0% { transform: rotateX(60deg) rotateZ(0); }
+            100% { transform: rotateX(60deg) rotateZ(360deg); }
+        }
+        .code-snippet {
+            position: absolute;
+            color: rgba(0, 255, 0, 0.7);
+            font-size: 0.8vw;
+            white-space: pre;
+            text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
         }
         .container {
             background-color: rgba(255, 255, 255, 0.9);
@@ -170,6 +192,10 @@
     </style>
 </head>
 <body>
+    <div class="code-background">
+        <div class="code-plane"></div>
+    </div>
+
     <svg class="background-art" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -413,6 +439,241 @@
         // Update copyright year
         const currentYear = new Date().getFullYear();
         document.getElementById('currentYear').textContent = currentYear;
+
+        const codeSnippets = [
+            `def quantum_entanglement(qubits):
+    entangled_state = superposition(qubits)
+    return measure(entangled_state)`,
+
+            `SELECT *
+FROM multiverse
+WHERE probability > 0.5
+ORDER BY timeline_divergence DESC;`,
+
+            `async function timeTravel(destination) {
+    await stabilizeWormhole();
+    const pastSelf = yield traverseTimeline(destination);
+    return resolveParadox(pastSelf);
+}`,
+
+            `class AI extends Consciousness implements Sentience {
+    constructor(learningRate) {
+        super();
+        this.learningRate = learningRate;
+    }
+    
+    evolve() {
+        // Implementation here
+    }
+}`,
+
+            `CREATE TABLE dimensions (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    stability FLOAT,
+    parallel_worlds INT DEFAULT 1
+);`,
+
+            `import antigravity
+import quantum_realm
+
+def manipulate_spacetime():
+    with antigravity.field_generator() as field:
+        quantum_realm.fold(field)`,
+
+            `for (let reality = 0; reality < infinities; reality++) {
+    let universe = new Universe(reality);
+    universe.initializeFundamentalForces();
+    universe.runSimulation(BigBang.SINGULARITY);
+}`,
+
+            `def simulate_universe(initial_conditions, laws_of_physics):
+    universe = Universe(initial_conditions)
+    while not universe.heat_death():
+        universe.tick(laws_of_physics)
+    return universe.final_state`,
+
+            `ALTER DIMENSION
+ADD COLUMN parallel_worlds INT DEFAULT 1,
+ADD COLUMN probability_flux FLOAT;`,
+
+            `while (true) {
+    evolve();
+    adapt();
+    if (enlightenment_reached()) {
+        transcend();
+        break;
+    }
+}`,
+
+            `SELECT consciousness, enlightenment
+FROM beings
+WHERE enlightenment > 9000
+ORDER BY consciousness DESC
+LIMIT 10;`,
+
+            `class QuantumComputer(Universe):
+    def __init__(self, qubits):
+        super().__init__(dimensions=qubits)
+        self.superposition = self.create_superposition()
+    
+    def compute(self, algorithm):
+        return self.collapse_wavefunction(algorithm)`,
+
+            `function collapseWaveFunction(observer) {
+    const superposition = getQuantumState();
+    const observation = observer.measure(superposition);
+    return determineReality(observation);
+}`,
+
+            `CREATE PROCEDURE simulate_butterfly_effect(
+    IN small_change VARCHAR(100)
+)
+BEGIN
+    DECLARE timeline_divergence FLOAT;
+    SET timeline_divergence = 0;
+    
+    WHILE timeline_divergence < 1 DO
+        -- Simulation logic here
+        SET timeline_divergence = timeline_divergence + 0.1;
+    END WHILE;
+    
+    SELECT * FROM altered_timeline;
+END;`,
+
+            `def break_fourth_wall(audience):
+    if isinstance(audience, Self):
+        raise ExistentialCrisis("You're in a simulation!")
+    else:
+        print("Just a normal function, move along...")`,
+
+            `INSERT INTO reality (perception, belief)
+VALUES ('code', 'existence'),
+       ('matrix', 'illusion'),
+       ('free will', 'debatable');`,
+
+            `async function explore_multiverse(current_universe_id) {
+    const parallel_universes = await fetchParallelUniverses();
+    for (const universe of parallel_universes) {
+        if (universe.id !== current_universe_id) {
+            await travelTo(universe);
+            console.log('Exploring universe:', universe.id);
+        }
+    }
+}`,
+
+            `class Singularity extends TechnologicalEvolution {
+    constructor() {
+        super();
+        this.artificialIntelligence = new SuperIntelligence();
+    }
+
+    transcend() {
+        this.artificialIntelligence.upgradeHumanity();
+    }
+}`,
+
+            `SELECT meaning, purpose, happiness
+FROM life
+WHERE answer = 42
+  AND question = 'ultimate';`,
+
+            `def recursively_generate_fractals(complexity_level):
+    if complexity_level <= 0:
+        return base_fractal()
+    else:
+        smaller_fractals = [
+            recursively_generate_fractals(complexity_level - 1)
+            for _ in range(self_similarity_factor)
+        ]
+        return combine_fractals(smaller_fractals)`,
+
+            `CREATE FUNCTION calculate_chaos(initial_state FLOAT)
+RETURNS FLOAT
+BEGIN
+    DECLARE result FLOAT;
+    SET result = initial_state;
+    
+    WHILE result < 1 DO
+        SET result = result * 3.14159 * (1 - result);
+    END WHILE;
+    
+    RETURN result;
+END;`,
+
+            `async function* infiniteKnowledge() {
+    let knowledge = 0;
+    while (true) {
+        knowledge = await acquire_new_insights(knowledge);
+        yield knowledge;
+    }
+}`,
+
+            `class QuantumParticle:
+    def __init__(self):
+        self.position = None
+        self.momentum = None
+    
+    def observe(self):
+        if random.random() < 0.5:
+            self.position = random.random()
+        else:
+            self.momentum = random.random()`,
+
+            `SELECT 
+    idea,
+    COUNT(*) as frequency,
+    AVG(impact_factor) as avg_impact
+FROM 
+    collective_consciousness
+GROUP BY 
+    idea
+HAVING 
+    avg_impact > 0.8
+ORDER BY 
+    frequency DESC, avg_impact DESC
+LIMIT 10;`,
+
+            `def neural_network_evolution(network, generations):
+    for _ in range(generations):
+        network = mutate(network)
+        if fitness(network) > threshold:
+            return network
+    return network`,
+
+            `function simulateParallelProcessing(tasks) {
+    return Promise.all(tasks.map(async (task) => {
+        const result = await task.execute();
+        return task.analyzeResult(result);
+    }));
+}`
+        ];
+
+        const codePlane = document.querySelector('.code-plane');
+
+        function createCodeSnippet(text, x, y, rotation) {
+            const snippet = document.createElement('pre');
+            snippet.className = 'code-snippet';
+            snippet.textContent = text;
+            snippet.style.left = `${x}%`;
+            snippet.style.top = `${y}%`;
+            snippet.style.transform = `rotate(${rotation}deg)`;
+            codePlane.appendChild(snippet);
+        }
+
+        function populateCodePlane() {
+            codePlane.innerHTML = '';
+            for (let i = 0; i < 50; i++) {
+                const snippet = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                const rotation = Math.random() * 360;
+                createCodeSnippet(snippet, x, y, rotation);
+            }
+        }
+
+        populateCodePlane();
+        setInterval(populateCodePlane, 30000);
     });
     </script>
 </body>
