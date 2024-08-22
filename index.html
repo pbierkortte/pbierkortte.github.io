@@ -182,8 +182,10 @@
                 display: block;
                 width: 250px;
                 margin: 2rem auto;
+            }
+            .resume-button a {
+                display: block;
                 padding: 1rem;
-                color: white;
                 background-color: #4CAF50;
                 color: white;
                 text-align: center;
@@ -194,7 +196,7 @@
                 position: relative;
                 overflow: hidden;
             }
-            .resume-button:before {
+            .resume-button a:before {
                 content: "";
                 position: absolute;
                 top: 0;
@@ -209,10 +211,10 @@
                 );
                 transition: all 0.5s;
             }
-            .resume-button:hover:before {
+            .resume-button a:hover:before {
                 left: 100%;
             }
-            .resume-button:hover {
+            .resume-button a:hover {
                 background-color: #45a049;
                 transform: translateY(-2px);
                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
